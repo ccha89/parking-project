@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+*{margin:0; padding:0;}
+li {list-style-type:none;}
+ a {text-decoration:none; color:#000;}
+ a:hover {text-decoration:underline;}
+ img {vertical-align:middle; border:none;} /*이미지에 생기는 1px정도의 차이를 없애주기위해 버티컬 사용*/
+ body {font-size:16px; font-family:arial; width:100%; height:auto; overflow-x:hidden ;}
+ 
+ @media screen and  (min-width:780px) and (max-width:1200px){
+
+    
+    #wrap{background-color: #E8E8E8;}
+    #header { width:100%; height:200px; background-color: #E8E8E8;}
+     
+    
+    /*로고*/    
+     #logo { 
+        margin: 10px;
+        height: 70px;
+    }
+
+    /*네비게이션*/
+    .gnb {
+        margin: 130px 0 0 20px;
+        display: none;
+    }
+
+    /*addClass*/
+    .gnb.open {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 8888;
+    }
+        .gnb li {       
+            margin-top: 20px;     
+            display: block;
+            margin-right: 40px;
+        }
+            .gnb li a {
+                font-weight: bold;
+                font-size: 35px;
+                color: #fff;
+            }
+            .gnb li:hover a {
+                color: #FF7E4B;
+            }
+    .sns { display: none; }
+    
+               /*햄버거 버튼*/
+            .hamBtn, .hamBtn span {
+                display: inline-block;
+                transition: all 0.4s;
+                box-sizing: border-box;
+                    }
+                
+                    .hamBtn {
+                        clear:both;
+                        position: absolute; /*span의 기준이 되기 때문에 absolute로 설정하면 span의 위치가 틀어져 스크립트 효과가 나타나지 않는다*/
+                        right: 5%;
+                        width: 50px;
+                        height: 44px;
+                        z-index: 9999;/*h1보다 높거나 같지 않으면 스크립트 효과가 나타나지 않음*/
+                    }
+                
+                        .hamBtn span {
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background-color: #000;
+                            border-radius: 4px;
+                        }
+                        .hamBtn span:nth-of-type(1) { top: 0; }
+                        .hamBtn span:nth-of-type(2) { top: 20px; }
+                        .hamBtn span:nth-of-type(3) { bottom: 0; }
+                        /*active-1의 addClass*/
+                        .hamBtn.active-1 span:nth-of-type(1) { transform: translateY(20px) rotate(-45deg); }
+                        .hamBtn.active-1 span:nth-of-type(2) { opacity: 0; }
+                        .hamBtn.active-1 span:nth-of-type(3) { transform: translateY(-20px) rotate(45deg); }
+                    .hamBg {
+                        background-color: #001F3F;
+                        position: fixed;
+                        top: 0;
+                        right: -100%;
+                        z-index: 7777;
+                        width: 100%;
+                        height: 100vh;
+                    }
+
+        #container { clear:both }
+             #slider{
+                        width:100%;
+                        height:100vh;
+                        background-color: #E8E8E8;
+                        
+                        
+                    /*background: #E8E8E8 url('../images/iPhone 12 Pro.png') no-repeat left bottom;*/ 
+                    }
+                       
+                        #iphoneWrap{
+                            float: right;
+                            position: relative;
+                            width: 30%;
+                            height: 100vh;
+                        }
+                        #iphone {
+                                width: 30%;
+                                max-width: 100%;
+                                position: absolute;
+                                bottom: -25%;
+                                left: 10%;
+                                transform: translateX(-50%);
+                        }
+                        #app{
+                            float: left;
+                                position: relative;
+                                width: 60%;
+                                height: 100vh;
+                                text-align: center;
+                                left:5%;
+                        }
+                            #app h2{
+                            width: 100%;
+                            text-align:center; 
+                            color:#FF7E4B; 
+                            font-size: 4vw; /* 뷰포트 너비의 5% */
+                            position:absolute; 
+                            top: 5%;
+                            margin: 0 auto;    
+                            font-weight: 900;
+                        } 
+                            #app span{
+                                width: 100%;
+                                text-align:center; 
+                                color:#000; 
+                                font-size: 2vw; /* 뷰포트 너비의 3% */
+                                font-weight: 500px;
+                                position:absolute; 
+                                top: 25%;
+                                left:0;
+                                margin: 0 auto; 
+                                font-weight: 900;    
+                            }         
+                                #app p{
+                                width: 100%;
+                                text-align:center; 
+                                color:#000; 
+                                font-size: 1.5vw; /* 뷰포트 너비의 2% */
+                                position:absolute; 
+                                top: 35%;
+                                margin: 0 auto;   
+                                
+                            }         
+                                #app .text{
+                                    font-size:1.5vw;
+                                    margin-top: 20%;
+                                }
+                                #icon{ position: relative;}
+                                    .apple{
+                                        float:left;
+                                        width:15%;
+                                        height:auto;
+                                        margin-top: -30%;
+                                        margin-left: 15%;
+                                    }
+                                    .google{
+                                        float:left;
+                                        width:15%;
+                                        height:auto;
+                                        margin-top: -30%;
+                                        margin-left: 38%;
+                                    }
+            .bar {
+                position:fixed; 
+                bottom:100px; 
+                right:0; 
+                z-index: 9999;
+                }
+
+        #content{height:100vh; }
+        .intro{clear:both; background-color: #E8E8E8;}
+        .introImgwrap{
+            float: left;
+            position: relative;
+            width: 40%;
+            height: 100vh;
+            }
+            .introImg{
+            width: 140%;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+                    }
+        .introTxt{
+            float: left;
+            position: relative;
+            width: 60%;
+            height: 100vh;
+            left:-3%;
+        }   
+            .introTxt h2{
+                width: 100%;
+                text-align:center; 
+                color:#FF7E4B; 
+                font-size: 3vw; 
+                position:absolute; 
+                top: 30%;
+                margin: 0 auto;    
+            }         
+            .introTxt p{
+                width: 100%;
+                text-align:center; 
+                color:#000; 
+                font-size: 2.5vw; 
+                position:absolute; 
+                top: 40%;
+                margin: 0 auto;    
+            }         
+          
+                  
+            .home{}
+                .homeImgwrap{
+                        float: right;
+                        position: relative;
+                        width: 40%;
+                        height: 100vh;
+                        }
+                        .homeImg{
+                        width: 150%;
+                        position: absolute;
+                        top: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                                }
+                .homeTxt{
+                        float: left;
+                        position: relative;
+                        width: 60%;
+                        height: 100vh;
+                        left:5%;
+                    }   
+                        .homeTxt h2{
+                            width: 100%;
+                            text-align:center; 
+                            color:#FF7E4B; 
+                            font-size: 3vw;
+                            position:absolute; 
+                            top: 30%;
+                            margin: 0 auto;    
+                        }         
+                        .homeTxt p{
+                            width: 100%;
+                            text-align:center; 
+                            color:#000; 
+                            font-size: 2.5vw;
+                            position:absolute; 
+                            top: 40%;
+                            margin: 0 auto;    
+                        }
+            .park{clear:both;}
+                .parkImgwrap{
+                    float: left;
+                    position: relative;
+                    width: 40%;
+                    height: 100vh;
+                    }
+                    .parkImg{
+                    width: 130%;
+                    position: absolute;
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                            }
+                .parkTxt{
+                    float: left;
+                    position: relative;
+                    width: 60%;
+                    height: 100vh;
+                    left:-5%;
+                }   
+                    .parkTxt h2{
+                        width: 100%;
+                        text-align:center; 
+                        color:#FF7E4B; 
+                        font-size: 3vw;
+                        position:absolute; 
+                        top: 30%;
+                        margin: 0 auto;    
+                    }         
+                    .parkTxt p{
+                        width: 100%;
+                        text-align:center; 
+                        color:#000; 
+                        font-size: 2.5vw;
+                        position:absolute; 
+                        top: 40%;
+                        margin: 0 auto;    
+                    }
+            .myCar{background-color: #E8E8E8;}
+                .myCarImgwrap{
+                            float: right;
+                            position: relative;
+                            width: 40%;
+                            height: 100vh;
+                            }
+                            .myCarImg{
+                                width: 140%;
+                                position: absolute;
+                                top: 10%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                    }
+                    .myCarTxt{
+                            float: left;
+                            position: relative;
+                            width: 60%;
+                            height: 100vh;
+                            left:5%;
+                        }   
+                            .myCarTxt h2{
+                                width: 100%;
+                                text-align:center; 
+                                color:#FF7E4B; 
+                                font-size: 3vw;
+                                position:absolute; 
+                                top: 30%;
+                                margin: 0 auto;    
+                            }         
+                            .myCarTxt p{
+                                width: 100%;
+                                text-align:center; 
+                                color:#000; 
+                                font-size: 2.5vw; 
+                                position:absolute; 
+                                top: 40%;
+                                margin: 0 auto;    
+                            }          
+ 
+           
+
+    #footer{ clear: both; background-color: #D9D9D9; position: relative; text-align: center;}
+        #foot {height: 150px;  padding: 20px 0 0 20px; }
+            #foot ul { margin-bottom: 10px; }
+            #foot ul li{display: inline;}
+                .flfl li {margin-right: 20px;}
+                .flfl li.bold {font-weight: bold; text-decoration: underline;}
+                #foot span{ font-size: 16px; display: inline;}
+                address{
+                    text-align: center;
+                    color: gray;
+                    position: relative;
+                    top:40px;
+                }
+           
+ }
